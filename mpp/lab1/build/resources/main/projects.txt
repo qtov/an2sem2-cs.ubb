@@ -1,0 +1,14 @@
+1; qwe; 5
+2; qweqe; 14
+3; qweqe; 13
+4; qweqe; 13
+5; qweqe; 13
+6; qweqe; 13
+7; qweqe; 13
+8; qweqe; 13
+9; qweqe; 7
+234; qweqwe asdasd; 13
+10; qweqe; 6
+11; qweqe; 5
+12; qweqwe asdasd; 13
+13; dfnsdbzhglsdc; 9

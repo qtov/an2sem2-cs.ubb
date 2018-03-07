@@ -1,0 +1,53 @@
+poza edge lab 1 help
+
+
+emiliapop_23@yahoo.com
+
+L1: lab1->lab3
+L2: lab3->lab4
+L3: lab4->lab6
+
+Practic: lab7
+
+intarziere: 1p la 2 sapt. Daca se preda intr-o alta sapt 0.5p
+
+min 6 prezente din 7 lab
+5/7 la sem
+
+sql server - visual studio
+           v
+       windows forms application
+       windows forms app(.net framework)
+
+sql server                -----            c#
+(tabele, relatii)       DataAdapter       (DataSet)
+
+dataGridView pt table
+
+SqlConnection con = new SqlConnection("Data Source=...; Initial Catalog=...;Integrated Security=True");
+SqlDataAdapteer adapter = new SqlDataAdapter();
+DataSet data = new DataSet();
+
+Data Source = server name adica SIBYL2
+Initial Catalog = numele bazei de date
+
+refresh btn
+adapter.SelectCommand = new SqlCommand("Select * from Regizori", con);
+data.Clear();
+adapter.Fill(data);
+dataGridViiew.DataSource = data.Tables[0];
+
+add btn
+try {
+	adapter.InsertCommand = new SqlCommand("insert into Regizori(Nume, PremiiOscar) values (@n, @p)", con);
+	adapter.InsertCommand.Parameters.Add("@n", SqlDbType.Varchar).Value = textBox1.Text;
+	adapter.InsertCommand.Parameters.Add("@p", SqlDbType.Int).Value = Int32.Parse(textBox2.Text);
+	con.Open();
+	adapter.InsertCommand.ExecuteNonQuery();
+	con.Close();
+}
+catch (Exception x) {
+	MessageBox.Show(x.Message);
+	con.Close();
+}
+

@@ -1,0 +1,3 @@
+https://www.cs.ubbcluj.ro/~bufny/programare-web/
+http://www.cs.ubbcluj.ro/~ionutb/
+https://validator.w3.org/

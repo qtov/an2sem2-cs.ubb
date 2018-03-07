@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="rootpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProjectControllerFX">
+   <children>
+      <Button fx:id="addBtn" layoutX="567.0" layoutY="374.0" mnemonicParsing="false" onAction="#addBtnAction" text="Add" />
+      <TextField fx:id="idText" layoutX="616.0" layoutY="27.0" />
+      <TextField fx:id="weekText" layoutX="617.0" layoutY="275.0" onKeyTyped="#filUncheckWeek" />
+      <Label layoutX="593.0" layoutY="32.0" text="id" />
+      <Label layoutX="530.0" layoutY="75.0" text="description" />
+      <Label layoutX="567.0" layoutY="280.0" text="week" />
+      <Button fx:id="extBtn" layoutX="645.0" layoutY="374.0" mnemonicParsing="false" onAction="#extBtnAction" text="Extend" />
+      <Button fx:id="deleteBtn" layoutX="740.0" layoutY="374.0" mnemonicParsing="false" onAction="#deleteBtnAction" text="Delete" />
+      <RadioButton fx:id="stRB" layoutX="37.0" layoutY="32.0" mnemonicParsing="false" onAction="#stRBAction" text="Student" />
+      <RadioButton fx:id="prRB" layoutX="135.0" layoutY="32.0" mnemonicParsing="false" text="Project" />
+      <RadioButton fx:id="grRB" layoutX="228.0" layoutY="32.0" mnemonicParsing="false" onAction="#grRBAction" text="Grade" />
+      <TableView fx:id="table" layoutX="37.0" layoutY="113.0" prefHeight="397.0" prefWidth="480.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="61.0" text="id">
+           <cellValueFactory>
+              <PropertyValueFactory property="id" />
+           </cellValueFactory>
+          </TableColumn>
+          <TableColumn fx:id="desc" prefWidth="357.0" text="desc">
+             <cellValueFactory>
+                <PropertyValueFactory property="desc" />
+             </cellValueFactory>
+          </TableColumn>
+            <TableColumn fx:id="week" prefWidth="61.0" text="week">
+               <cellValueFactory>
+                  <PropertyValueFactory property="week" />
+               </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <CheckBox fx:id="filDescCB" layoutX="621.0" layoutY="434.0" mnemonicParsing="false" onAction="#checkBoxAction" text="Filter Description" />
+      <CheckBox fx:id="filLowWeekCB" layoutX="621.0" layoutY="461.0" mnemonicParsing="false" onAction="#checkBoxAction" text="Filter Lower than week" />
+      <CheckBox fx:id="filNewCB" layoutX="621.0" layoutY="489.0" mnemonicParsing="false" onAction="#checkBoxAction" text="Filter new projects" />
+      <TextArea fx:id="descText" layoutX="617.0" layoutY="67.0" onKeyTyped="#filUncheckDesc" prefHeight="200.0" prefWidth="187.0" />
+      <TextField fx:id="search" layoutX="37.0" layoutY="71.0" onKeyTyped="#searchAction" prefHeight="31.0" prefWidth="63.0" promptText="Search" />
+   </children>
+</AnchorPane>
