@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register form</title>
+	<meta charset="UTF-8">
+	<style>
+		table td {
+			border: 1px solid black;
+			text-align: left;
+		}
+
+		div table {
+			margin: 0 auto;
+		}
+
+
+	</style>
+</head>
+<body>
+	<a href="https://www.google.ro" target="_blank">Open google</a> <br>
+	<div style="width: 100%; text-align: center;">
+		<h1>
+			Register form
+		</h1>
+		<h2>
+			Register form
+		</h2>
+		<h3>
+			Register form
+		</h3>
+
+		<h4>
+			Register form again
+		</h4>
+
+		<h5>
+			Register form and again
+		</h5>
+
+		<h6>
+			And again and again and again....
+		</h6>
+		<img src="https://kuulpeeps.com/wp-content/uploads/2016/12/study.jpg" alt="prehistoric browser" width="150" height="100">
+		<form method="get">
+			<table style="border: 1px solid black;">
+				<tr>
+					<th colspan="2" style="background-color: blue;">
+						Register form
+					</th>
+				</tr>
+				<tr>
+					<td>
+						<label for="username">Username<strong>*</strong></label>
+					</td>
+					<td>
+						<input type="text" name="username" id="username" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="password"><strong>Password</strong></label>
+					</td>
+					<td>
+						<input type="password" name="password" id="password" size="32" required>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="email">Email</label>
+					</td>
+					<td>
+						<input type="text" name="email" id="email">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>Color</span>
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td>
+									<span>
+										<input type="radio" name="color" id="red" value="red">
+										red
+									</span>
+								</td>
+								<td>
+									<span>
+										<input type="radio" name="color" id="green" value="green">
+										green
+									</span>
+								</td>
+								<td>
+									<span>
+										<input type="radio" name="color" id="black" value="black">
+										black
+									</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<span>
+										<input type="radio" name="color" id="blue" value="blue">
+										blue
+									</span>
+								</td>
+								<td>
+									<span>
+										<input type="radio" name="color" id="yellow" value="yellow">
+										yellow
+									</span>
+								</td>
+								<td>
+									<span>
+										<input type="radio" name="color" value="white" id="white">
+										white
+									</span>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td rowspan="3">
+						Drinks of choice
+					</td>
+					<td>
+						<table>
+							<tr>
+								<td>
+									<input type="checkbox" name="tea" id="tea" value="tea">
+									tea
+								</td>
+								<td>
+									<input type="checkbox" name="coffee" id="coffee" value="coffee">
+									coffee
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="wine" id="wine" value="wine">
+									wine
+								</td>
+								<td>
+									<input type="checkbox" name="smoothie" id="smoothie" value="smoothie">
+									smoothie
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="water" id="water" value="water" checked>
+						water
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" name="stronger" id="stronger" value="stronger" disabled>
+						Something stronger
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<span>Are you an alcoholic?</span>
+					</td>
+					<td>
+						<input type="text" name="alcoholic" readonly value="yes">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<b>Gender</b>
+					</td>
+					<td>
+						<select name="gender">
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="apache">Apache Helicopter</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>age</td>
+					<td>
+						<input type="number" name="age" min="1" max="14" step="2">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<textarea placeholder="Tell us about yourself(max 250c)" maxlength="250" cols="50" rows="6"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<fieldset>
+							<legend>Pet</legend>
+							Name: <input type="text" placeholder="name" name="pet_name"><br>
+							Race: <input type="text" name="pet_race"><br>
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Upload profile pic
+					</td>
+					<td>
+						<input type="file" multiple>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="submit">submit</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+	<div>Requirements</div>
+	<ul>
+		<li>
+			Username
+			<ul>
+				<li>At least 4 char</li>
+				<li>Only a-z0-9</li>
+				<li>Do not have special characters or special letters (ăîșțâ)</li>
+			</ul>
+		</li>
+		<li>
+			Password
+			<ol>
+				<li>
+					At least 8 characters long
+				</li>
+				<li>
+					At least 1 of the characters
+					<ol type="I" start="7">
+						<li>
+							!@#$%^*.,
+						</li>
+						<li>
+							One uppercase and one lowercase
+						</li>
+						<li>
+							numbers
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+	</ul>
+	<p>
+		Lorem ipsum...
+	</p>
+</body>
+</html>

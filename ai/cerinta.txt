@@ -1,0 +1,21 @@
+1
+
+pseudo
+
+lsolutii = {}
+vizitat = {}
+while (c != null) {
+	curent = c.pop()
+	vizitat = vizitat U {curent}
+	if solutie(curent)
+		lsolutii.push(curent)
+	foreach v in curent.getvecini():
+		if consistent(v) && !visited(v)
+			c.push(v)
+}
+
+dfs = stack
+bfs = queue
+gbfs = priority queue
+
+gbfs suprascri op de comp
