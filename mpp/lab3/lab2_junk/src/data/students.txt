@@ -1,0 +1,12 @@
+1; qwe qwe; 123; somethin@somthein.com; qwe qwe
+33; test testing; 224; test@testing.com; test testing
+2; first student; 213; somethin@somthein.com; first guide
+3; third student; 223; something@somthing.com; third guide
+4; patru qwe; 231; weioqjwo@iojoi.ro; oeqewpo qewqw
+20; test test; 215; test@test.com; test test
+101; first student; 213; somethin@somthein.com; first guide
+21; test test; 223; test@testing.test; test qwert
+7; poi poi; 232; poi@poi.poi; poi poi
+23; test testing; 223; test@testing.com; test testing
+9; poi poi; 223; poi@poi.opi; poi poi
+12; first student; 213; somethin@somthein.com; first guide

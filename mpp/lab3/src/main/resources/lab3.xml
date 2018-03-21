@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306" />
+        <property name="username" value="root" />
+        <property name="password" value="toor" />
+    </bean>
+
+    <util:properties id="jdbcProps" location="classpath:db.config"/>
+
+    <bean id="studentValidator" class="repository.StudentValidator"/>
+
+    <bean id="str" class="java.lang.String">
+        <constructor-arg value="string_1"/>
+    </bean>
+
+    <bean id="studentRepo" class="repository.StudentFileRepository">
+        <constructor-arg>
+            <bean class="repository.StudentValidator"/>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="domain.Student">
+                <property name="name" ref="str" />
+            </bean>
+        </constructor-arg>
+    </bean>
+</beans>

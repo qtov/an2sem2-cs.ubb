@@ -1,0 +1,9 @@
+Adaugare nota; 1; 1.0; 9; 6; qwe qweqqq
+Adaugare nota; 2; 5.0; 14; 14; eq sd asd
+Modificare nota; 1; 3.0; 3; 4; qwe asd
+Agaugare nota;1; 3; 3.0; 3; 13; qwe asd
+Agaugare nota;1; 4; 3.0; 3; 13; qwe asd
+Modificare nota;1; 3; 3.04; 3; 13; qwe asd
+Modificare nota;1; 3; 4.0; 3; 13; qwe asd
+Modificare nota;1; 3; 10.0; 3; 13; qwe asd
+Modificare nota;1; 3; 9.0; 3; 13; qwe asd

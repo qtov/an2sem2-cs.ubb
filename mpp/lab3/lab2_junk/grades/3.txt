@@ -1,0 +1,2 @@
+Adaugare nota;1;10.0;5;4;wep qewwe
+Agaugare nota;3;10.0;2;10;14;qwe asd

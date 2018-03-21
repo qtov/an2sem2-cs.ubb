@@ -12,8 +12,8 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             string connectionString = "Server=SIBYL2; Database=sem7; Integrated Security=true;";
-            try {
-                using (SqlConnection connection = new SqlConnection(connectionString)) {
+                try {
+                    using (SqlConnection connection = new SqlConnection(connectionString)) {
                     Console.WriteLine(connection.State);
                     connection.Open();
                     Console.WriteLine(connection.State);
