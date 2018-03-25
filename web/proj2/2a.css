@@ -1,0 +1,66 @@
+html, body {
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+}
+
+.container div, .header div, .footer div, .main div, .menu div {
+	display: flex;
+	align-items: center;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+}
+
+.header {
+	height: 20%;
+	background-color: red;
+}
+
+.footer {
+	background-color: #EBC5BC;
+	height: 10%;
+	width: 100%;
+}
+
+.main {
+	height: 65%;
+	width: 100%;
+	background-color: green;
+}
+
+.menu {
+	height: 5%;
+	display: inline-flex;
+	width: 100%;
+	background-color: yellow;
+}
+
+.menu div {
+	height: 100%;
+	width: 100%;
+}
+
+.menu ul {
+	width: 100%;
+	height: 100%;
+}
+
+.menu li {
+	display: inline-flex;
+	align-items: center;
+	width: 18%;
+	float: left;
+	height: 100%;
+	border: none;
+	border-left: 1px solid black;
+	padding-left: 20px;
+	margin: 0px;
+}
+
+.menu li:first-child {
+	border-left: none;
+}

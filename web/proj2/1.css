@@ -1,0 +1,19 @@
+.box-container {
+	border: 1px solid black;
+	width: 410px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	width: 200px;
+	display: inline-block;
+	text-align: center;
+	height: 100%;
+}
+
+.box-img > img {
+	max-width: 200px;
+	margin: 0 auto;
+}

@@ -1,0 +1,33 @@
+img {
+	height: 100px;
+	width: 75px;
+}
+
+.img-holder {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.img-holder:first-child {
+	margin-top: 0px;
+}
+
+.img-holder div {
+	padding-left: 10px;
+	font-size: 12px;
+}
+
+.container {
+	border: 1px solid black;
+	width: 20%;
+	padding: 20px;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+	background-color: yellow;
+	/*align-items: center;*/
+}

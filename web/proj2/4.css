@@ -1,0 +1,148 @@
+@media hackz {
+	\/\*d(.*)\*\/
+	$1
+
+	(\/\*q\*\/)(.*)
+	$1/\*d$2\*/
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	position: absolute;
+	top: 0px;
+	overflow: hidden;
+	left: 84px;
+}
+
+#fb {
+	top: 0px;
+	clip: rect(84px, 84px, 168px, 0px);
+}
+
+#dot {
+	/*q*//*dleft: 0px;*/
+	/*q*//*dtop: 84px;*/
+	clip: rect(84px, 168px, 168px, 84px);
+}
+
+#ball {
+	/*q*//*dleft: -84px;*/
+	/*q*//*dtop: 168px;*/
+	clip: rect(84px, 252px, 168px, 168px);
+}
+
+#g {
+	/*q*//*dleft: -168px;*/
+	/*q*//*dtop: 252px;*/
+	clip: rect(84px, 336px, 168px, 252px);
+}
+
+#in {
+	/*q*//*dleft: -252px;*/
+	/*q*//*dtop: 336px;*/
+	clip: rect(84px, 420px, 168px, 336px);
+}
+
+#pin {
+	/*q*//*dleft: -336px;*/
+	/*q*//*dtop: 420px;*/
+	clip: rect(84px, 504px, 168px, 420px);
+}
+
+#wifi {
+	/*q*//*dleft: -420px;*/
+	/*q*//*dtop: 504px;*/
+	clip: rect(84px, 588px, 168px, 504px);
+}
+
+#skype {
+	/*q*//*dleft: -504px;*/
+	/*q*//*dtop: 588px;*/
+	clip: rect(84px, 672px, 168px, 588px);
+}
+
+#twitter {
+	/*q*//*dleft: -588px;*/
+	/*q*//*dtop: 672px;*/
+	clip: rect(84px, 756px, 168px, 672px);
+}
+
+#vine {
+	/*q*//*dleft: -672px;*/
+	/*q*//*dtop: 756px;*/
+	clip: rect(84px, 840px, 168px, 756px);
+}
+
+#yt {
+	/*q*//*dleft: -756px;*/
+	/*q*//*dtop: 840px;*/
+	clip: rect(84px, 924px, 168px, 840px);
+}
+
+#fb:hover {
+	top: 84px;
+	clip: rect(0px, 84px, 84px, 0px);
+}
+
+#dot:hover {
+	top: 84px;
+	/*q*//*dtop: 168px;*/
+	clip: rect(0px, 168px, 84px, 84px);
+}
+
+#ball:hover {
+	top: 84px;
+	/*q*//*dtop: 252px;*/
+	clip: rect(0px, 252px, 84px, 168px);
+}
+
+#g:hover {
+	top: 84px;
+	/*q*//*dtop: 336px;*/
+	clip: rect(0px, 336px, 84px, 252px);
+}
+
+#in:hover {
+	top: 84px;
+	/*q*//*dtop: 420px;*/
+	clip: rect(0px, 420px, 84px, 336px);
+}
+
+#pin:hover {
+	top: 84px;
+	/*q*//*dtop: 504px;*/
+	clip: rect(0px, 504px, 84px, 420px);
+}
+
+#wifi:hover {
+	top: 84px;
+	/*q*//*dtop: 588px;*/
+	clip: rect(0px, 588px, 84px, 504px);
+}
+
+#skype:hover {
+	top: 84px;
+	/*q*//*dtop: 672px;*/
+	clip: rect(0px, 672px, 84px, 588px);
+}
+
+#twitter:hover {
+	top: 84px;
+	/*q*//*dtop: 756px;*/
+	clip: rect(0px, 756px, 84px, 672px);
+}
+
+#vine:hover {
+	top: 84px;
+	/*q*//*dtop: 840px;*/
+	clip: rect(0px, 840px, 84px, 756px);
+}
+
+#yt:hover {
+	top: 84px;
+	/*q*//*dtop: 924px;*/
+	clip: rect(0px, 924px, 84px, 840px);
+}

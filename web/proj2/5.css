@@ -1,0 +1,32 @@
+img {
+	height: 100px;
+	width: 75px;
+}
+
+.img-holder {
+	display: flex;
+	flex-direction: row;
+	background-color: cyan;
+	width: 36%;
+	display: inline-block;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 10px;
+	margin: 10px;
+}
+
+.img-holder div {
+	font-size: 12px;
+}
+
+.container {
+	border: 1px solid black;
+	width: 20%;
+	padding: 20px;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}

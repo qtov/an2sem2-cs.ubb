@@ -1,0 +1,54 @@
+ul {
+	list-style-type: none;
+}
+
+.alice {
+	background-image: "7.png";
+}
+
+.alice, .bob, .tom {
+	max-width: 30%;
+	position: relative;
+	background: #c0c0c0;
+	border-radius: .4em;
+	padding: 10px;
+	margin: 50px;
+	left: 50px;
+	word-wrap: break-word;
+}
+
+.alice:after, .bob:after, .tom:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 40%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-right-color: #c0c0c0;
+	border-left: 0;
+	border-bottom: 0;
+	margin-top: -10px;
+	margin-left: -20px;
+}
+
+.alice:before {
+	clip: rect(0px, 75px, 75px, 0px);
+	content: url("7.png");
+	position: absolute;
+	left: -95px;
+}
+
+.bob:before {
+	clip: rect(0px, 150px, 75px, 75px);
+	content: url("7.png");
+	position: absolute;
+	left: -170px;
+}
+
+.tom:before {
+	clip: rect(0px, 225px, 75px, 150px);
+	content: url("7.png");
+	position: absolute;
+	left: -245px;
+}

@@ -1,0 +1,17 @@
+.header {
+	width: 100%;
+}
+
+.header-content {
+	vertical-align: middle;
+	width: 80%;
+	min-height: 50px;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.leftside-bar li a {
+	text-decoration: none;
+}
