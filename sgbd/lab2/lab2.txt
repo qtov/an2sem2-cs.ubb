@@ -1,0 +1,49 @@
+Panel pt generarea de textfield-uri
+using System.Configuration
+
+App.config:
+
+<xml ...>
+<connectionStrings>
+    <add name="cn" connectionString="DataSource; integrated crap"/>
+</connectionStrings>
+
+<appSettings>
+    <add key="tf" value="filme"/>
+    <add key="tp" value="regizori"/>
+    <add key="select" value="select * from regizori"/>
+    <add key="c" value="Numef, rid"/>
+    <add key="p" value="@numeF, @rid"/>
+    ...
+</appSettings>
+
+
+//da - dataAdapter
+//ds - dataSet
+key in xml e name in c#
+
+Form.cs
+using System.Configuration
+
+string conn = ConfigurationManager.ConnectionStrings["cn"].ConnectionString;
+SqlConnection cs = new SqlConnection(conn);
+
+string s = ConnectionSettings.appSettings["select"];
+da.SelectCommand = new SqlCommand(s, cs);
+
+string tf = ConfigurationManager.appSettings["tf"];
+string c = ConfigurationManager.appSettings["c"];
+string p = ConfigurationManager.appSettings["p"];
+
+List<string> coll = new List<string>(ConfigurationManager.appSettings["c"].split(','));
+SqlCommand cmd = new SqlCommand("insert into " + tf + "(" + c + ")" + "values(" + p + ")", cs);
+foreach (string c in coll)
+{
+    TextBox txb = (TextBox)panel.Controls[c];
+    cmd.Parameters.AddWithValue("@" + c, txb.Text);
+}
+
+cs.Open();
+cmd.ExecuteNonQuery();
+cs.Close();
+

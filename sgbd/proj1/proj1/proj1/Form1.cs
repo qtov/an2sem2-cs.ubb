@@ -78,6 +78,8 @@ namespace proj1
                 adapterComments.Update(dataSet.Tables["comments"]);
                 dataSet.Tables["comments"].Clear();
                 adapterComments.Fill(dataSet, "comments");
+
+                conn.Close();
             }
             catch (Exception error)
             {
