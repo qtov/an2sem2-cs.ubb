@@ -1,0 +1,152 @@
+<html>
+    
+    <head>
+        <title>
+            3
+        </title>
+
+        <style>
+            table {
+                border: 1px solid black;
+            }
+
+            table td {
+                width: 80px;
+                height: 80px;
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            table td span {
+                display: none;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <table id="main_table">
+            <tr id="line1" class="line">
+                <td id="cell1" class="cell"></td>
+                <td id="cell2" class="cell"></td>
+                <td id="cell3" class="cell"></td>
+                <td id="cell4" class="cell"></td>
+            </tr>
+            <tr id="line2" class="line">
+                <td id="cell5" class="cell"></td>
+                <td id="cell6" class="cell"></td>
+                <td id="cell7" class="cell"></td>
+                <td id="cell8" class="cell"></td>
+            </tr>
+            <tr id="line3" class="line">
+                <td id="cell9" class="cell"></td>
+                <td id="cell10" class="cell"></td>
+                <td id="cell11" class="cell"></td>
+                <td id="cell12" class="cell"></td>
+            </tr>
+            <tr id="line4" class="line">
+                <td id="cell13" class="cell"></td>
+                <td id="cell14" class="cell"></td>
+                <td id="cell15" class="cell"></td>
+                <td id="cell16" class="cell"></td>
+            </tr>
+        </table>
+
+        <script>
+            function hide_cell()
+            {
+                window.first.childNodes[0].style.display = 'none';
+                window.second.childNodes[0].style.display = 'none';
+            }
+
+            window.first = -1;
+            window.second = -1;
+            window.choose = false;
+            window.timeout;
+            window.win_count = 0;
+
+            table = document.getElementById('main_table');
+
+            var cells = table.getElementsByClassName("cell"); 
+            for (var i = 0; i < cells.length; i++) { 
+                cells[i].onclick = function() {
+                    if (!window.choose) {
+                        clearTimeout(window.timeout);
+
+                        if (window.second !== -1) {
+                            hide_cell();
+                        }
+
+                        window.first = this;
+
+                        this.childNodes[0].style.display = 'initial';
+
+                        window.choose = true;
+                    }
+                    else if (window.first != this) {
+                        window.second = this;
+
+                        this.childNodes[0].style.display = 'initial';
+
+                        window.choose = false;
+
+                        window.timeout = setTimeout(hide_cell, 2000);
+
+                        if (first.innerHTML == second.innerHTML)
+                        {
+                            clearTimeout(window.timeout);
+
+                            ++window.win_count;
+
+                            window.first.onclick = function() {
+                                return false;
+                            }
+
+                            window.second.onclick = function() {
+                                return false;
+                            }
+
+                            window.first = -1;
+                            window.second = -1;
+
+                            if (window.win_count == Math.floor((window.lines * window.columns) / 2))
+                            {
+                                alert("You won, yay.");
+                            }
+                        }
+                    }
+                };
+            }
+
+
+            var n = table.rows.length;
+            var m = table.rows[0].cells.length;
+            window.lines = n;
+            window.columns = m;
+
+            var a = table.rows;
+
+            var a_v = [];
+            for (var i = 0; i < n * m; i++) {
+                a_v[i] = i % ((n * m) / 2);
+            }
+
+            for (var i = 0; i < a_v.length; i++)
+            {
+                var swp_i = i + Math.floor(Math.random() * (a_v.length - i));
+
+                var tmp = a_v[i];
+                a_v[i] = a_v[swp_i];
+                a_v[swp_i] = tmp;
+            }
+
+            for (var i = 0; i < n; i++) {
+                for (var j = 0; j < m; j++) {
+                    a[i].cells[j].innerHTML = '<span>' + a_v[i * m + j] + '</span>'
+                }
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>1</title>
+    <style>
+        .inline {
+            display: inline-block;
+            width: 200px;
+        }
+
+        select {
+            width: 100px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="inline">
+                <select id="select1" multiple>
+                    <option hidden value="a">a</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+            <div class="inline">
+                <select id="select2" multiple>
+                    <option hidden>a</option>
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+            </div>
+        </div>
+
+        <script>
+            var select1 = document.getElementById('select1');
+            var select2 = document.getElementById('select2');
+
+            select1.ondblclick = function(){
+                var opt = document.createElement('option');
+
+                opt.value = select1.value;
+                opt.innerHTML = select1.options[select1.selectedIndex].text;
+                select2.appendChild(opt);
+
+                select1.remove(select1.selectedIndex);
+            };
+
+            select2.ondblclick = function(){
+                var opt = document.createElement('option');
+
+                opt.value = select2.value;
+                opt.innerHTML = select2.options[select2.selectedIndex].text;
+                select1.appendChild(opt);
+
+                select2.remove(select2.selectedIndex);
+            };
+        </script>
+    </body>
+</html>

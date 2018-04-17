@@ -1,0 +1,183 @@
+<html>
+<head>
+    <title>6</title>
+    <style>
+        #main_table {
+            border-collapse: collapse;
+        }
+
+        #main_table td {
+            text-align: center;
+            width: 50px;
+            border-top: 1px inset #ddd;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table id="main_table1">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>    
+    
+    <script>
+        var n = parseInt(prompt("Give n"));
+        var x = n - 1;
+        var y = n - 1;
+
+        function update_table(arr_matrix, ptable)
+        {
+            var n = ptable.rows.length;
+
+            for (var i = 0; i < n; ++i)
+            {
+                for (var j = 0; j < n; ++j)
+                {
+                    if (arr_matrix[i * n + j] === "")
+                    {
+                        x = j;
+                        y = i;
+                    }
+
+                    ptable.rows[i].cells[j].innerHTML = arr_matrix[i * n + j];
+                    
+                }
+            }
+        }
+
+        function valid_coord(x, y, n)
+        {
+            if (x >= n || x < 0)
+            {
+                return false;
+            }
+
+            if (y >= n || y < 0)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        function table_create() {
+            var body = document.getElementsByTagName('body')[0];
+            var tbl = document.createElement('table');
+
+            tbl.setAttribute("id", "main_table");
+
+            var tbdy = document.createElement('tbody');
+
+            for (var i = 0; i < n; ++i)
+            {
+                var tr = document.createElement('tr');
+
+                for (var j = 0; j < n; ++j) 
+                {
+                    var td = document.createElement('td');
+
+                    tr.appendChild(td);
+                }
+
+                tbdy.appendChild(tr);
+            }
+
+            tbl.appendChild(tbdy);
+            body.appendChild(tbl)
+        }
+
+        table_create();
+
+        var ptable = document.getElementById("main_table");
+        var arr_matrix = [];
+
+        for (var i = 0; i < (n * n) - 1; ++i)
+        {
+            arr_matrix[i] = i + 1;
+        }
+
+        arr_matrix[(n * n) - 1] = "";
+
+        for (var i = 0; i < arr_matrix.length; i++)
+        {
+            var swp_i = i + Math.floor(Math.random() * (arr_matrix.length - i));
+
+            var tmp = arr_matrix[i];
+            arr_matrix[i] = arr_matrix[swp_i];
+            arr_matrix[swp_i] = tmp;
+        }
+
+        update_table(arr_matrix, ptable);
+
+        document.onkeydown = function(e) {
+            if (e.keyCode == 37) { //left
+                if (valid_coord(x + 1, y, n))
+                {
+                    var cell = ptable.rows[y].cells[x + 1];
+                    ptable.rows[y].cells[x].innerHTML = cell.innerHTML;
+                    cell.innerHTML = "";
+
+                    ++x;
+                }
+            }
+
+            if (e.keyCode == 38) { //up
+                if (valid_coord(x, y + 1, n))
+                {
+                    var cell = ptable.rows[y + 1].cells[x];
+                    ptable.rows[y].cells[x].innerHTML = cell.innerHTML;
+                    cell.innerHTML = "";
+                    
+                    ++y;
+                }
+            }
+
+            if (e.keyCode == 39) { //right
+                if (valid_coord(x - 1, y, n))
+                {
+                    var cell = ptable.rows[y].cells[x - 1];
+                    ptable.rows[y].cells[x].innerHTML = cell.innerHTML;
+                    cell.innerHTML = "";
+
+                    --x;
+                }
+            }
+
+            if (e.keyCode == 40) { //down
+                if (valid_coord(x, y - 1, n))
+                {
+                    var cell = ptable.rows[y - 1].cells[x];
+                    ptable.rows[y].cells[x].innerHTML = cell.innerHTML;
+                    cell.innerHTML = "";
+                    
+                    --y;
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>

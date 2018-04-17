@@ -1,0 +1,109 @@
+<html>
+<head>
+    <title>5</title>
+    <style>
+        #lst {
+            position: relative;
+            height: 281px;
+            width: 450px;
+            list-style: none;
+        }
+
+        #lst img {
+            width: 200px;
+            height: 200px;
+            position:absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+
+        #lst div {
+            opacity: 0;
+            position: absolute;
+            top: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ol id="lst">
+        <li class="img_trans">
+            <img src="https://cdn.shopify.com/s/files/1/1017/2183/t/2/assets/live-preview-potato.png?12552353370221482192" alt=""/>
+            <div>asdasdasd</div>
+        </li>
+
+        <li class="img_trans">
+            <img src="https://i5.walmartimages.com/asr/2e73a088-4c0a-48c3-9c44-8e1c54858711_1.dd971b660b1616e81e0bac729d816f0e.jpeg?odnHeight=450&odnWidth=450&odnBg=FFFFFF" alt=""/>
+            <div>zxczxczcxzc</div>
+        </li>
+
+        <li class="img_trans">
+            <img src="https://www.organicfacts.net/wp-content/uploads/2013/06/Cucumber.jpg" alt=""/>
+            <div>fghfghgd</div>
+        </li>
+
+        <li class="img_trans">
+            <img src="http://cdn.shopify.com/s/files/1/0206/9470/products/jap_pumpkin_2_9def66c6-4330-437b-beb9-a321278b3944_grande.jpeg?v=1477253212" alt=""/>
+            <div>aiyuiyui</div>
+        </li>
+
+        <li class="img_trans">
+            <img src="https://i5.walmartimages.ca/images/Large/832/452/6000196832452.jpg?odnBound=460" alt=""/>
+            <div>asjkljklkjd</div>
+        </li>
+    </ol>
+
+    <button onclick="button_transition(-1)">Left</button>
+    <button onclick="button_transition(1)">Right</button>
+    
+    <script>
+        var imgs = document.getElementsByClassName('img_trans');
+        var current_img_i = 0;
+        var total_imgs = 5;
+
+        imgs[0].getElementsByTagName('img')[0].style.opacity = '1';
+        imgs[0].getElementsByTagName('div')[0].style.opacity = '1';
+
+        function transition(direction)
+        {
+            var old_img = imgs[current_img_i].getElementsByTagName('img')[0];
+            var new_img_i = (current_img_i + direction) % total_imgs;
+
+            if (new_img_i < 0) {
+                new_img_i = total_imgs - 1;
+            }
+
+            var new_img = imgs[new_img_i].getElementsByTagName('img')[0];
+
+            old_img.style.opacity = '0';
+            new_img.style.opacity = '1';
+            old_img.parentElement.getElementsByTagName('div')[0].style.opacity = '0';
+            new_img.parentElement.getElementsByTagName('div')[0].style.opacity = '1';
+
+            current_img_i = new_img_i;
+        }
+
+        function button_transition(direction)
+        {
+            transition(direction);
+            clearInterval(window.int);
+            window.int = setInterval(function() {
+                transition(1);
+            }, 6000);
+        }
+
+        window.int = setInterval(function() {
+            transition(1);
+        }, 6000);
+    </script>
+
+</body>
+
+</html>
